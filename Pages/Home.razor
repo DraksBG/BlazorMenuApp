@@ -1,0 +1,82 @@
+﻿@page "/"
+
+<h1>Blazor Menu Component</h1>
+
+<p>This application demonstrates a multi-level dropdown menu component in Blazor.</p>
+
+<p><a href="menu-example" class="btn btn-primary">View Example Page</a></p>
+
+<h2>Features</h2>
+<ul>
+    <li><strong>Unlimited Nesting:</strong> Menu items can be nested to any depth</li>
+    <li><strong>Position-Aware Submenus:</strong>
+        <ul>
+            <li>First level submenus appear <strong>below</strong> their parent item</li>
+            <li>Deeper level submenus appear to the <strong>right</strong> of their parent</li>
+        </ul>
+    </li>
+    <li><strong>Hover Activation:</strong> Submenus appear when hovering over parent items</li>
+    <li><strong>Auto-Hiding:</strong> Submenus automatically hide when mouse moves away</li>
+    <li><strong>Visual Indicators:</strong> Arrow symbols indicate items that have submenus</li>
+</ul>
+
+<h2>Menu Structure</h2>
+<p>The menu component uses a declarative syntax that matches the hierarchical nature of menus:</p>
+
+<pre>
+&lt;Menu&gt;
+    &lt;MenuItems&gt;
+        &lt;MenuItem Text="Item 1"&gt;
+            &lt;MenuItems&gt;
+                &lt;MenuItem Text="Item 1.1"&gt;&lt;/MenuItem&gt;
+                &lt;MenuItem Text="Item 1.2"&gt;
+                    &lt;MenuItems&gt;
+                        &lt;MenuItem Text="Item 1.2.1"&gt;&lt;/MenuItem&gt;
+                        &lt;MenuItem Text="Item 1.2.2"&gt;&lt;/MenuItem&gt;
+                    &lt;/MenuItems&gt;
+                &lt;/MenuItem&gt;
+            &lt;/MenuItems&gt;
+        &lt;/MenuItem&gt;
+        &lt;MenuItem Text="Item 2"&gt;&lt;/MenuItem&gt;
+        &lt;MenuItem Text="Item 3"&gt;&lt;/MenuItem&gt;
+    &lt;/MenuItems&gt;
+&lt;/Menu&gt;
+</pre>
+
+<h2>Try It Out</h2>
+<p>The navigation bar at the top of this page uses the menu component. Try hovering over "Item 1" to see:</p>
+<ol>
+    <li>First-level items "Item 1.1" and "Item 1.2" appear <strong>below</strong> "Item 1"</li>
+    <li>When hovering over "Item 1.2", second-level items "Item 1.2.1" and "Item 1.2.2" appear to the <strong>right</strong></li>
+</ol>
+
+<style>
+    pre {
+        background: #333;
+        color: #fff;
+        padding: 15px;
+        border-radius: 4px;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 10px 0;
+    }
+    
+    .btn:hover {
+        background-color: #0069d9;
+    }
+    
+    h2 {
+        margin-top: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 8px;
+    }
+</style>

@@ -1,0 +1,58 @@
+﻿@inherits LayoutComponentBase
+@using BlazorMenu.Components.Components
+
+<div class="main-layout">
+    <header>
+        <nav>
+            <Menu>
+                <MenuItems>
+                    <MenuItem Text="Item 1">
+                        <MenuItems>
+                            <MenuItem Text="Item 1.1"></MenuItem>
+                            <MenuItem Text="Item 1.2">
+                                <MenuItems>
+                                    <MenuItem Text="Item 1.2.1"></MenuItem>
+                                    <MenuItem Text="Item 1.2.2"></MenuItem>
+                                </MenuItems>
+                            </MenuItem>
+                        </MenuItems>
+                    </MenuItem>
+                    <MenuItem Text="Item 2">
+                        <MenuItems>
+                            <MenuItem Text="Item 2.1"></MenuItem>
+                            <MenuItem Text="Item 2.2"></MenuItem>
+                        </MenuItems>
+                    </MenuItem>
+                    <MenuItem Text="Item 3"></MenuItem>
+                </MenuItems>
+            </Menu>
+        </nav>
+    </header>
+    
+    <main class="content">
+        @Body
+    </main>
+</div>
+
+<style>
+    .main-layout {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    header {
+        background-color: #f0f0f0;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    nav {
+        width: 100%;
+    }
+    
+    .content {
+        padding: 20px;
+        flex: 1;
+    }
+</style>
